@@ -17,3 +17,4 @@ https://github.com/shimabox/line_country_bot
 
 - 参考にさせてもらったブログ
 https://blog.shimabox.net/2017/02/24/try_line_messaging_api/
+
