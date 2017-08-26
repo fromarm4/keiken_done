@@ -1,0 +1,34 @@
+
+// Utility Class
+$direction-list: top, left, right, bottom;
+$direction-alias: t, l, r, b;
+$size-list: xs, sm, md, lg;
+
+@each $direction in $direction-list {
+    $i: index($direction-list, $direction);
+
+    @each $size in $size-list {
+        $j: index($size-list, $size);
+        $alias: nth($direction-alias, $i);
+
+        .m-#{$alias}-#{$size} {
+            margin-#{$direction}: #{$j * 10}px;
+        }
+    }
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.logo {
+    font-family: 'Righteous', cursive;
+}
+
+@media (min-width: $screen-sm-min) {
+    .lead {
+        font-size: 16px;
+    }
+}

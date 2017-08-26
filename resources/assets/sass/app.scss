@@ -1,0 +1,26 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Righteous|Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Site Common Style
+@import "common";
+
+
+.panel > .panel-heading-oneline {
+    height: 43px;
+}
+
+.panel > .panel-heading > .label {
+    font-size: 100%;
+}
+
+.avatar {
+    font-size: 40px;
+    line-height: 54px;
+}
