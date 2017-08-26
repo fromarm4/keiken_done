@@ -1,8 +1,8 @@
 # KeikenDone
 
-php: >=5.6.4,
-laravel: 5.4.*,
-line-bot-sdk: ^2.2,
+- php: >=5.6.4
+- laravel: 5.4.*
+- line-bot-sdk: ^2.2
 
 Line Botで遊んでみたかったので
 KeikenDoneという架空SNSの投稿をランダムに返してくれるLine Botを作ってみました。

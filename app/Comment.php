@@ -57,6 +57,11 @@ class Comment extends Model
 
         if ($count = $post->comments->count()) {
             $post->comment_count = $count;
+
+            if (Auth::user()->id == $post->id) {
+                $post->status = 'closed';
+            }
+
             $post->save();
         }
 

@@ -33,6 +33,11 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
     public function scopeOpen($query)
     {
         return $query->where('status', 'open');

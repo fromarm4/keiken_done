@@ -23,16 +23,21 @@
 
                     @foreach($post->comments as $comment)
                     <div class="row">
+                        @if ($is_commenter = $post->user->id != $comment->user->id)
                         <div class="col-xs-1">
                             <span class="avatar"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
                         </div>
-                        <div class="col-xs-11">
+                        @endif
+                        <div class="{{ $is_commenter ? 'col-xs-11' : 'col-xs-12 my-keikendan' }}">
                             <div class="panel panel-default">
+                                @if (!$is_commenter)
+                                <div class="ribbon">私の経験談</div>
+                                @endif
                                 <div class="panel-body">
                                     <div class="body">
                                         {!! nl2br(e($comment->body)) !!}
                                     </div>
-                                    <div class="user-info text-right"><b>{{ $comment->user->name }}</b> <span class="text-muted small">{{ $comment->created_at }}</span></div>
+                                    <div class="user-info text-right">@if ($is_commenter)<b>{{ $comment->user->name }}</b> @endif<span class="text-muted small">{{ $comment->created_at }}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -42,6 +47,7 @@
                 </div>
             </div>
 
+            @if($post->status != 'closed')
             <form method="POST" action="{{ route('comments.store', $post->id) }}" id="comment-form">
                 {{ csrf_field() }}
                 <div class="panel panel-default">
@@ -60,6 +66,7 @@
                     </div>
                 </div>
             </form>
+            @endif
 
             <a href="{{ route('posts.index') }}" class="btn btn-primary">
                 <i class="fa fa-long-arrow-left" aria-hidden="true"></i> 経験談リスト
