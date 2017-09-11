@@ -50,10 +50,10 @@
                         @endauth
                     @endif
                 </div>
-                <img src="http://qr-official.line.me/L/35lOGheBpc.png" width="150" height="150">
-                <div>@fmd6708u</div>
+                <img src="{{ env('LINE_CHANNEL_QR') }}" width="150" height="150">
+                <div>{{ '@' . env('LINE_CHANNEL_ACCOUT') }}</div>
                 <div>
-                    <a href="https://line.me/R/ti/p/%40fmd6708u"><img height="36" border="0" alt="友だち追加" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"></a>
+                    <a href="https://line.me/R/ti/p/%40{{ env('LINE_CHANNEL_ACCOUT') }}"><img height="36" border="0" alt="友だち追加" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"></a>
                 </div>
             </div>
         </div>
